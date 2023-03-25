@@ -23,7 +23,7 @@ export default function Home() {
           target='_blank'
           rel='noreferrer'
           className='text-white underline'>
-          Go to app
+          Go to app Now!
         </a>
       </main>
     </div>
