@@ -37,7 +37,7 @@ export default function Home() {
           <Button />
         </div>
         <a
-          href='https://event-dee-docs.vercel.app/'
+          href='https://event-dee.vercel.app/'
           className='text-white underline'
           target='_blank'
           rel='noreferrer'>
