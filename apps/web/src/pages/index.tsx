@@ -31,7 +31,7 @@ export default function Home() {
           Dev (app)
           <span className='block bg-gradient-to-r from-brandred to-brandblue bg-clip-text text-transparent px-2'>
             Create a yaml for each vercel project. They can be simple: on release curl hook app.my-doamin. on push curl hook landing.my-domain. and keep teh ignore buiold steps to filter changes.
-            That is good
+            That is good ØØØ
           </span>
         </h1>
         <div className='mx-auto mt-5 max-w-xl sm:flex sm:justify-center md:mt-8'>
