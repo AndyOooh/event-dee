@@ -18,13 +18,14 @@ jobs:
     - name: Determine changes
       id: diff
       run: |
-        diff=$(git diff --name-only HEAD $(git merge-base HEAD origin/main))
-        echo "::set-output name=diff::$diff"
+        diff=$(git diff --name-only HEAD $(git merge-base HEAD ${{ github.base_ref }}))
+        echo "Changes detected: $diff"
+        echo "diff=$diff" >> $GITHUB_ENV
     - name: Deploy web changes
-      if: ${{ contains(steps.diff.outputs.diff, 'apps/web') }}
+      if: ${{ contains(env.diff, 'apps/web') }}
       run: |
         curl https://api.vercel.com/v1/integrations/deploy/prj_gMacbOOPHFgcG68cSURKttHFBCMj/IA81oGLHua
     - name: Deploy docs changes
-      if: ${{ contains(steps.diff.outputs.diff, 'apps/docs') }}
+      if: ${{ contains(env.diff, 'apps/docs') }}
       run: |
         curl https://api.vercel.com/v1/integrations/deploy/prj_kSMzWzQkxLTCqV7DI67hVgXuPYO2/vEJckOuzyq
