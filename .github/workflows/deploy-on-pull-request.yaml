@@ -1,9 +1,8 @@
 name: Deploy on Changes to Next.js Apps
 on:
-  pull_request:
+  push:
     branches:
       - main
-    types: [synchronize]
     paths:
       - 'apps/web/**'
       - 'apps/web/*'
