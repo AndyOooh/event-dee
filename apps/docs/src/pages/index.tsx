@@ -13,6 +13,7 @@ export default function Home() {
           Landing
           <span className='block bg-gradient-to-r from-brandred to-brandblue bg-clip-text text-transparent px-2'>
             testing lalala
+
           </span>
         </h1>
         <div className='mx-auto mt-5 max-w-xl sm:flex sm:justify-center md:mt-8'>
