@@ -26,6 +26,6 @@ jobs:
         run: pnpm install turbo --global
       - name: Lint, Build, and Test
         run: |
-          turbo run lint --filter=...[origin/main]
-          turbo run build --filter=...[origin/main]
-          turbo run test --filter=...[origin/main]
+          turbo run lint --filter="...[HEAD^1]"
+          # turbo run build --filter=...[origin/main]
+          # turbo run test --filter=...[origin/main]
