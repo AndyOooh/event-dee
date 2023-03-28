@@ -1,5 +1,6 @@
 name: learn-github-actions
 run-name: ${{ github.actor }} is learning GitHub Actions
+
 on: [push]
 jobs:
   output-username-and-nod-version:
@@ -21,5 +22,5 @@ jobs:
         run: turbo run --dryrun=json
         id: check_changes
       - name: Deploy web changes
-        run: echo "Changes detected: env.check_changes ${{ env.check_changes }}
+        run: echo "Changes detected: $check_changes"
         # if: ${{ contains(env.diff, 'apps/web') }}
