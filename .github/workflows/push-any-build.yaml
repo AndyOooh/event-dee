@@ -24,9 +24,8 @@ jobs:
           version: 7
       - name: Install TurboRepo CLI
         run: pnpm install turbo --global
-     
       - name: Lint, Build, and Test
         run: |
-          turbo run lint --filter=main
-          turbo run build --filter=main
-          turbo run test --filter=main
+          turbo run lint --filter=[origin/main]
+          turbo run build --filter=[origin/main]
+          turbo run test --filter=[origin/main]
