@@ -24,8 +24,8 @@ jobs:
         run: turbo run build --filter="...[HEAD^1]" --dry-run=json
         id: workspaces-changed
       - name: Log WS with changes
-        run: echo "${{ steps.workspaces-changed.output.Name }}"
+        run: echo "${{ steps.workspaces-changed.output.Name }} ${{ steps.workspaces-changed.output.name }} ${{ steps.workspaces-changed.name }} ${{ steps.workspaces-changed.output.Name }}"
 
       # - name: Deploy web changes
-        # run: echo "${{ steps.check_changes.outputs.dryrun }}"
-        # if: ${{ contains(env.diff, 'apps/web') }}
+      # run: echo "${{ steps.check_changes.outputs.dryrun }}"
+      # if: ${{ contains(env.diff, 'apps/web') }}
