@@ -3,8 +3,13 @@ run-name: Deploy on push to main
 
 on:
   push:
-    branches-ignore:
+    branches:
       - main
+    paths:
+      - 'apps/web/**'
+      - 'apps/web/*'
+      - 'apps/docs/**'
+      - 'apps/docs/*'
 
 jobs:
   build:
