@@ -42,7 +42,7 @@ export default function Home() {
           className='text-white underline'
           target='_blank'
           rel='noreferrer'>
-          Go to landing now! Should not deploy to qq 22
+          Go to landing now! Should not e to qq 22
         </a>
 
         <div className='mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 place-content-evenly'>
