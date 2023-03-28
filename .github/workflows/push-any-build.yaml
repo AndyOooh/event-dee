@@ -25,6 +25,7 @@ jobs:
      
       - name: Lint, Build, and Test
         run: |
-          turbo run lint --filter=[HEAD^1]
-          turbo run build --filter=[HEAD^1]
-          turbo run test --filter=[HEAD^1]
+          # turbo run lint --filter=[HEAD^1]
+          turbo run lint --filter=[main]]
+          turbo run build --filter=[main]]
+          turbo run test --filter=[main]]
