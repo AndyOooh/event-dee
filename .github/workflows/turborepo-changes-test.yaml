@@ -22,4 +22,4 @@ jobs:
         if: contains(fromJson(steps.turborepoChanges.outputs.package_names), 'web') # Check if components package has changed
         run: echo 'package "web" has changed'
       - name: Log chaanged packages
-        run: echo fromJson(steps.turborepoChanges.outputs.package_names)
+        run: cho ${{ steps.turborepoChanges.outputs.package_names }}
