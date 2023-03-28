@@ -5,8 +5,21 @@ jobs:
   output-username-and-nod-version:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Install Node.js v18
+        uses: actions/setup-node@v2
         with:
-          node-version: '16'
-      - run: node -v
+          node-version: '18.x'
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7
+      - name: Install TurboRepo CLI
+        run: pnpm install turbo --global
+      - name: Check for workspace changes
+        run: turbo run --dryrun=json
+        id: check_changes
+      - name: Deploy web changes
+        run: echo "Changes detected: env.check_changes ${{ env.check_changes }}
+        # if: ${{ contains(env.diff, 'apps/web') }}
