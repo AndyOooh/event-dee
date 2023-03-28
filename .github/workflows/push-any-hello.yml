@@ -22,5 +22,5 @@ jobs:
         run: turbo run --dryrun=json
         id: check_changes
       - name: Deploy web changes
-        run: echo "Changes detected: $check_changes"
+        run: echo "${{ steps.check_changes.outputs.dryrun }}"
         # if: ${{ contains(env.diff, 'apps/web') }}
