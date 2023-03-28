@@ -16,7 +16,9 @@ jobs:
         with:
           node-version: '18.x'
       - name: Install pnpm
-        run: npm install -g pnpm
+        - uses: pnpm/action-setup@v2
+          with:
+            version: 7
       - name: Install TurboRepo CLI
         run: pnpm i -g @turbo/turbo
       - name: Check for workspace changes
