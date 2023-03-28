@@ -25,8 +25,8 @@ jobs:
         id: workspaces-changed
       - name: Log WS with changes
         run: |
-        echo "${{ steps.workspaces-changed.output.Name }} ${{ steps.workspaces-changed.output.name }} ${{ steps.workspaces-changed.name }} ${{ steps.workspaces-changed.output.Name }}"
-        echo ${{ steps.check_changes.outputs.json }}
+          echo "${{ steps.workspaces-changed.output.Name }} ${{ steps.workspaces-changed.output.name }} ${{ steps.workspaces-changed.name }} ${{ steps.workspaces-changed.output.Name }}"
+          echo ${{ steps.check_changes.outputs.json }}
 
       # - name: Deploy web changes
       # run: echo "${{ steps.check_changes.outputs.dryrun }}"
