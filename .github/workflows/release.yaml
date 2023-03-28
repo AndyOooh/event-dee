@@ -1,0 +1,22 @@
+name: Deploy on Release
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Determine changes
+        id: diff
+        run: |
+          diff=$(git diff --name-only HEAD $(git merge-base HEAD ${{ github.base_ref }}))
+          echo "Changes detected: $diff"
+          echo "diff=$diff" >> $GITHUB_ENV
+      - name: Deploy web changes
+        if: ${{ contains(env.diff, 'app/web') }}
+        run: |
+          # replace with your deployment command for app/web - andy: replace with webhook for Vercel project app-event-dee

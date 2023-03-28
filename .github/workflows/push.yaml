@@ -1,0 +1,33 @@
+name: TurboRepos Workflow
+
+on:
+  push:
+    branches-ignore:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install Node.js v18
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18.x'
+      - name: Install pnpm
+        run: npm install -g pnpm
+      - name: Install TurboRepo CLI
+        run: pnpm i -g @turbo/turbo
+      - name: Check for workspace changes
+        run: turborepo diff
+        id: check_changes
+      - name: Lint, Build, and Test
+        run: |
+          for workspace in $(turborepo list --filter $(echo "${{ steps.check_changes.outputs.updated_workspaces }}"))
+          do
+            echo "Running commands for workspace: $workspace"
+            turborepo -w $workspace lint
+            turborepo -w $workspace build
+            turborepo -w $workspace test
+          done
