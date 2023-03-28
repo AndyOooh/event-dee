@@ -21,5 +21,5 @@ jobs:
       - name: Validate Action Output
         if: contains(fromJson(steps.turborepoChanges.outputs.package_names), 'web') # Check if components package has changed
         run: echo 'package "web" has changed'
-      - name: Log chaanged packages
+      - name: Log changed packages
         run: echo ${{ steps.turborepoChanges.outputs.package_names }}
