@@ -21,12 +21,12 @@ jobs:
       - name: Install TurboRepo CLI
         run: pnpm install turbo --global
       - name: Check for workspace changes
-        run: turbo run build --filter="...[HEAD^1]" --dry-run=json > output.json
+        run: turbo run build --filter="...[HEAD^1]" --dry-run=json
         id: workspaces-changed
       - name: Log WS with changes
         run: |
-          echo "${{ steps.workspaces-changed.output.Name }} ${{ steps.workspaces-changed.output.name }} ${{ steps.workspaces-changed.name }} ${{ steps.workspaces-changed.output.Name }}"
-          echo ${{ steps.check_changes.outputs.json }}
+          echo "${{ steps.workspaces-changed.output.package }} ${{ steps.workspaces-changed.output.name }} ${{ steps.workspaces-changed.name }} ${{ steps.workspaces-changed.output.package }}"
+          # echo ${{ steps.check_changes.outputs.json }}
 
       # - name: Deploy web changes
       # run: echo "${{ steps.check_changes.outputs.dryrun }}"
