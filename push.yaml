@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: '18.x'
       - name: Install pnpm
-      - uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v2
         with:
           version: 7
       - name: Install TurboRepo CLI
