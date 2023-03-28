@@ -19,7 +19,7 @@ jobs:
       - name: Install TurboRepo CLI
         run: pnpm install turbo --global
       - name: Check for workspace changes
-        run: turbo run build --filter=[HEAD^1] --dry-run=json
+        run: turbo run build --filter=[main] --dry-run=json
         id: check_changes
       # - name: Deploy web changes
         # run: echo "${{ steps.check_changes.outputs.dryrun }}"
