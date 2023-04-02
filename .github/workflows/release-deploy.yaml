@@ -1,5 +1,5 @@
 name: Deploy on Release
-run-name: Deploy web-main on release
+run-name: Deploy app-main on release
 
 on:
   release:
@@ -11,7 +11,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-
       - name: Checkout code
         uses: actions/checkout@v3
         with:
@@ -28,9 +27,9 @@ jobs:
         id: turborepoChanges
         uses: 94726/action-turborepo-changes@2f392aee0d6b90803c0551ea774c254451fd92be
 
-      - name: Deploy web to app.domain.com 
-        if: contains(fromJson(steps.turborepoChanges.outputs.package_names), 'web')
+      - name: Deploy app to app.domain.com
+        if: contains(fromJson(steps.turborepoChanges.outputs.package_names), 'app')
         run: curl https://api.vercel.com/v1/integrations/deploy/prj_hoYbmZnRmobnr5K9Dok65mmki7k7/oZFxMHUSsd
-      # - name: Deploy web changes
-      #   if: ${{ contains(env.diff, 'app/web') }}
+      # - name: Deploy app changes
+      #   if: ${{ contains(env.diff, 'app/app') }}
       #   run: curl https://api.vercel.com/v1/integrations/deploy/prj_hoYbmZnRmobnr5K9Dok65mmki7k7/oZFxMHUSsd

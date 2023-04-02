@@ -16,10 +16,10 @@ jobs:
         id: turborepoChanges
         uses: 94726/action-turborepo-changes@v1.0.0
         # with:
-          # from: HEAD^1 # Changes since previous commit (this is the default)
+        # from: HEAD^1 # Changes since previous commit (this is the default)
 
       - name: Validate Action Output
-        if: contains(fromJson(steps.turborepoChanges.outputs.package_names), 'web') # Check if components package has changed
-        run: echo 'package "web" has changed'
+        if: contains(fromJson(steps.turborepoChanges.outputs.package_names), 'app') # Check if components package has changed
+        run: echo 'package "app" has changed'
       - name: Log changed packages
         run: echo ${{ steps.turborepoChanges.outputs.package_names }}

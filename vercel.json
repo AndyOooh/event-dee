@@ -1,8 +1,7 @@
 {
   "git": {
     "deploymentEnabled": {
-      "main": false,
-      "johlo": false
+      "main": false
     }
   }
 }

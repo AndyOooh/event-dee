@@ -28,6 +28,6 @@ jobs:
           echo "${{ steps.workspaces-changed.output.package }} ${{ steps.workspaces-changed.output.name }} ${{ steps.workspaces-changed.name }} ${{ steps.workspaces-changed.output.package }}"
           # echo ${{ steps.check_changes.outputs.json }}
 
-      # - name: Deploy web changes
+      # - name: Deploy app changes
       # run: echo "${{ steps.check_changes.outputs.dryrun }}"
-      # if: ${{ contains(env.diff, 'apps/web') }}
+      # if: ${{ contains(env.diff, 'apps/app') }}
