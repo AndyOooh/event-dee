@@ -36,12 +36,8 @@ export default function Home() {
         <div className='mx-auto mt-5 max-w-xl sm:flex sm:justify-center md:mt-8'>
           <Button />
         </div>
-        <a
-          href='https://event-dee.vercel.app/'
-          className='text-white underline'
-          target='_blank'
-          rel='noreferrer'>
-          Go to landing now! Should not e to qq 22qqqq
+        <a href='https://event-dee.vercel.app/' className='text-white underline'>
+          Go to landing
         </a>
         <div className='mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 place-content-evenly'>
           {CARD_CONTENT.map(card => (

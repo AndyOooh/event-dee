@@ -18,12 +18,8 @@ export default function Home() {
         <div className='mx-auto mt-5 max-w-xl sm:flex sm:justify-center md:mt-8'>
           <Button />
         </div>
-        <a
-          href='https://dev-event-dee.vercel.app/'
-          target='_blank'
-          rel='noreferrer'
-          className='text-white underline'>
-          Go to app Now! qqwqq
+        <a href='https://dev-event-dee.vercel.app/' className='text-white underline'>
+          Go to the app
         </a>
       </main>
     </div>
