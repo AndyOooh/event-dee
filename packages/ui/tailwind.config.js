@@ -5,3 +5,5 @@ module.exports = {
   prefix: "ui-",
   ...sharedConfig,
 };
+
+// module.exports = require("tailwind-config/tailwind.config.js");

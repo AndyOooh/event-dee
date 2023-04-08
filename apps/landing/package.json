@@ -9,10 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "daisyui": "^2.51.5",
     "next": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "ui": "workspace:*"
+    "react-icons": "^4.8.0",
+    "sass": "^1.60.0",
+    "ui": "workspace:*",
+    "ui-two": "workspace:*",
+    "tailwind-config": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^18.11.17",
